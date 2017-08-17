@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/lv_customize_item_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_launcher" />
+
+    <LinearLayout
+        android:layout_marginLeft="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:text="----------"
+            android:textSize="16sp"
+            android:id="@+id/lv_customize_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_vertical" />
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:text="----------"
+            android:id="@+id/lv_customize_item_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:text="----------"
+            android:id="@+id/lv_customize_item_sell"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:text="----------"
+                android:textSize="16sp"
+                android:id="@+id/lv_customize_item_newprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+            <TextView
+                android:textSize="16sp"
+                android:layout_marginLeft="10dp"
+                android:text="----------"
+                android:id="@+id/lv_customize_item_oldprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+            <ImageView
+                android:layout_marginRight="10dp"
+                android:src="@mipmap/food_add"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/ssadd"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

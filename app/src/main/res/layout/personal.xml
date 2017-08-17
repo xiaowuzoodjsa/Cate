@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="8%"
+        android:background="@color/toolbar"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/toolbar">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我的"
+            android:textColor="#ffff"
+            android:textSize="18dp"
+            />
+    </android.support.v7.widget.Toolbar>
+
+
+
+    <RelativeLayout
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="25%"
+        android:background="@color/toolbar"
+        android:id="@+id/rela"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentStart="true">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/head"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/headImage"
+            android:src="@drawable/user_center_default_avatar"
+            />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/headImage"
+                android:text="立即登录"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:id="@+id/login"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
+                />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/login"
+            android:layout_toRightOf="@+id/headImage"
+            android:text="登陆后可享受更多特权"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:textColor="#fff"
+            android:id="@+id/content"
+            />
+    </RelativeLayout>
+    <ImageView
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="65%"
+        android:src="@drawable/user_center_orther"
+        android:layout_below="@+id/rela"
+        android:scaleType="fitXY"
+        />
+</android.support.percent.PercentRelativeLayout>

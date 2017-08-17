@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="8%"
+        android:text="订单"
+        android:textSize="25dp"
+        android:gravity="center_vertical"
+        android:background="@color/toolbar"
+        android:paddingLeft="10dp"
+        android:id="@+id/texttitle"
+        />
+    <android.support.v7.widget.RecyclerView
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="92%"
+        android:layout_below="@+id/texttitle"
+        android:id="@+id/recy"
+        ></android.support.v7.widget.RecyclerView>
+</android.support.percent.PercentRelativeLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/item_logo"
+        android:id="@+id/shoplog"
+        android:layout_marginLeft="10dp"
+        />
+    <TextView
+        android:layout_width="45dp"
+        android:layout_height="25dp"
+        android:background="#FADB43"
+        android:gravity="center"
+        android:text="品牌"
+        android:textSize="15dp"
+        android:layout_toRightOf="@+id/shoplog"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/pingpai"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="饿了"
+        android:layout_toRightOf="@+id/pingpai"
+        android:textSize="20dp"
+        android:id="@+id/shopname"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        />
+</RelativeLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+    <TextView
+        android:id="@+id/act_main_settingpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:text="设定密码"
+        android:textColor="@color/colorAccent"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/act_main_updatapassword"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_above="@id/act_main_settingpassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:text="修改密码"
+        android:textColor="@color/colorAccent"
+        android:textSize="18dp" />
+
+</LinearLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/per"
+    android:orientation="horizontal">
+
+    <ListView
+        android:id="@+id/lv_left"
+        app:layout_widthPercent="30%"
+        app:layout_heightPercent="100%"
+        android:divider="@null"
+        android:scrollbars="none" />
+
+    <arr.cate.contorller.fragment.HaveHeaderListView
+        android:id="@+id/lv_right"
+        app:layout_widthPercent="70%"
+        app:layout_heightPercent="100%"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/lv_left"
+        android:background="@android:color/white" />
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/gouwuche"
+        android:src="@drawable/seller_detail_cart"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/gouwuc"
+        />
+
+</android.support.percent.PercentRelativeLayout>

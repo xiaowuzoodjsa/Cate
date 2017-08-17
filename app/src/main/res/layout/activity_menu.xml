@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.Toolbar
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="8%"
+        android:id="@+id/tool"
+        android:background="@color/toolbar"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="饿了么第三家分店"
+            android:textColor="#fff"
+            />
+    </android.support.v7.widget.Toolbar>
+    <android.support.design.widget.TabLayout
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="8%"
+        android:id="@+id/tab"
+        android:layout_below="@+id/tool"
+        ></android.support.design.widget.TabLayout>
+
+    <android.support.v4.view.ViewPager
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="84%"
+        android:id="@+id/viewp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"></android.support.v4.view.ViewPager>
+</android.support.percent.PercentRelativeLayout>
