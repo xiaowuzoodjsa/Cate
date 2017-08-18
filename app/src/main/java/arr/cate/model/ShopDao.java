@@ -5,7 +5,7 @@ import org.greenrobot.greendao.annotation.Id;
 import org.greenrobot.greendao.annotation.Generated;
 
 /**
- * Created by 1 on 2017/8/17.
+ * Created by 1 on 2017/8/18.
  */
 @Entity
 public class ShopDao {

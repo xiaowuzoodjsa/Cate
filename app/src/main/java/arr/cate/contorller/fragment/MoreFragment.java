@@ -27,20 +27,15 @@ public class MoreFragment extends BaseFragment implements View.OnClickListener {
         changePassword = (TextView) view.findViewById(R.id.act_main_updatapassword);
         settingpassword.setOnClickListener(this);
         changePassword.setOnClickListener(this);
-
     }
-
     @Override
     protected void initData() {
 
     }
-
     @Override
     protected void initLinsenter() {
 
     }
-
-
     @Override
     public void onClick(View v) {
         Intent intent = new Intent();

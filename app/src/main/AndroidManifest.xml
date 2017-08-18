@@ -45,9 +45,10 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
+
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:name="com.mob.MobApplication"
+        android:name=".contorller.app.MyApp"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -79,37 +80,34 @@
 
         <meta-data android:name="Mob-AppKey" android:value="1fa9f2eaae8a7"/>
         <meta-data android:name="Mob-AppSecret" android:value="91dd47acc56be193102c6ae625363898"/>
-
-
         <meta-data
             android:name="UMENG_APPKEY"
-            android:value="5990ec815312dd0398000203" >
+            android:value="5996ca96a325110e500019b9" >
         </meta-data>
-        <activity
-            android:name=".contorller.activity.WXEntryActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:exported="true"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
         <activity
             android:name="com.umeng.qq.tencent.AuthActivity"
             android:launchMode="singleTask"
             android:noHistory="true" >
+
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-
                 <data android:scheme="tencent100424468" />
             </intent-filter>
         </activity>
+
         <activity
             android:name="com.umeng.qq.tencent.AssistActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:configChanges="orientation|keyboardHidden|screenSize"/>
+
+
+
+
+
+
 
         <receiver android:name=".contorller.fragment.PersonalFragment$Receiver">
             <intent-filter android:priority="1000">

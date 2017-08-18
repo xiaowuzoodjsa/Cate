@@ -1,7 +1,6 @@
 package arr.cate.contorller.app;
 
-import android.app.Application;
-
+import com.mob.MobApplication;
 import com.umeng.socialize.PlatformConfig;
 
 import arr.cate.contorller.base.BaseActivity;
@@ -9,7 +8,7 @@ import arr.cate.contorller.base.BaseActivity;
 /**
  * MyApp
  */
-public class MyApp extends Application {
+public class MyApp extends MobApplication{
     public static BaseActivity baseActivity;
 
     @Override

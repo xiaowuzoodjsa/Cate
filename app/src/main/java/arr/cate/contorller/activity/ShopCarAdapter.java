@@ -42,8 +42,8 @@ public class ShopCarAdapter extends BaseAdapter{
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder viewHolder;
+    public View getView(final int position, View convertView, ViewGroup parent) {
+        final ViewHolder viewHolder;
         if (convertView == null) {
             convertView=View.inflate(activity, R.layout.shopcaritem,null);
             viewHolder=new ViewHolder();
@@ -58,6 +58,7 @@ public class ShopCarAdapter extends BaseAdapter{
         Glide.with(activity).load(shopDaos.get(position).getImag()).into(viewHolder.image);
         viewHolder.text.setText(shopDaos.get(position).getName());
         viewHolder.text1.setText(shopDaos.get(position).getPrice()+"");
+
         return convertView;
     }
     class ViewHolder{

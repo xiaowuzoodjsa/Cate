@@ -14,17 +14,14 @@ public class AssessFragment extends BaseFragment {
     protected int initById() {
         return R.layout.asdas;
     }
-
     @Override
     protected void initView(View view) {
 
     }
-
     @Override
     protected void initData() {
 
     }
-
     @Override
     protected void initLinsenter() {
 

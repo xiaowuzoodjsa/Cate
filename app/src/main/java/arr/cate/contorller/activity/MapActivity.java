@@ -60,7 +60,7 @@ public class MapActivity extends BaseActivity {
 
         aMap.setOnMapClickListener(new AMap.OnMapClickListener() {
             @Override
-            public void onMapClick(LatLng latLng) {
+            public void onMapClick(final LatLng latLng) {
                 //绘制marker
                 aMap.clear();
                 final MarkerOptions markerOptions = new MarkerOptions();
@@ -69,6 +69,8 @@ public class MapActivity extends BaseActivity {
                 aMap.setOnMarkerClickListener(new AMap.OnMarkerClickListener() {
                     @Override
                     public boolean onMarkerClick(Marker marker) {
+                        String title = markerOptions.getTitle();
+                        marker.setTitle(title);
                         return false;
                     }
                 });

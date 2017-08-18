@@ -9,8 +9,8 @@ import java.util.List;
 
 import arr.cate.R;
 import arr.cate.contorller.base.BaseActivity;
-import arr.cate.model.ShopDao;
 import arr.cate.model.http.DBManager;
+import arr.cate.model.ShopDao;
 
 /**
  * Created by 1 on 2017/8/16.
@@ -33,9 +33,11 @@ public class ShopCarActivity extends BaseActivity{
         list.clear();
         List<ShopDao> shopDaos = DBManager.getInstance(ShopCarActivity.this).queryUserList();
         list.addAll(shopDaos);
-        ShopCarAdapter adapter=new ShopCarAdapter(ShopCarActivity.this,list );
+        final ShopCarAdapter adapter=new ShopCarAdapter(ShopCarActivity.this,list);
         listv.setAdapter(adapter);
+
     }
+
 
     @Override
     protected int initById() {

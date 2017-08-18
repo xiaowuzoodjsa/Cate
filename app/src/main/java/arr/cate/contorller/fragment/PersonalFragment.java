@@ -38,6 +38,10 @@ public class PersonalFragment extends BaseFragment implements View.OnClickListen
     protected static final int CHOOSE_PICTURE = 0;
     private File file;
     String Path="http://123.206.14.104:8080/FileUploadDemo/FileUploadServlet";
+    private String nameQQ;
+    private String QQurl;
+    private String urls;
+
     @Override
     protected int initById() {
         return R.layout.personal;
@@ -75,22 +79,17 @@ public class PersonalFragment extends BaseFragment implements View.OnClickListen
                 if (name==null){
                 startActivity(new Intent(getActivity(), LoginActivity.class));}else {
                     Toast.makeText(getActivity(),"信息",Toast.LENGTH_SHORT).show();
-                    headImage.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-
-                        }
-                    });
+                    headImage.setImageResource(R.mipmap.ic_launcher);
+                    content.setVisibility(View.GONE);
+                    login.setText(PersonalFragment.this.name);
                 }
                 break;
             case R.id.headImage:
-
                 Intent openAlbumIntent = new Intent(getActivity(), PhotoSelectorActivity.class);
                 openAlbumIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 openAlbumIntent.setType("image/*");
                 openAlbumIntent.putExtra("limit", 1 );
                 startActivityForResult(openAlbumIntent, CHOOSE_PICTURE);
-
                 break;
         }
     }
@@ -107,24 +106,31 @@ public class PersonalFragment extends BaseFragment implements View.OnClickListen
                 @Override
                 public void error(IOException str) {
                     System.out.println("失败"+str);
-                    Glide.with(getActivity()).load(str).error(R.mipmap.ic_launcher).into(headImage);
+
                 }
 
                 @Override
                 public void response(String str) {
                     System.out.println("成功"+str);
+                    urls = "http://123.206.14.104:8080/FileUploadDemo/files/headPicture.jpg";
+                    Glide.with(getActivity()).load(urls).error(R.mipmap.ic_launcher).into(headImage);
                 }
             });
         }
     }
-
     public class Receiver extends BroadcastReceiver {
         public void onReceive(Context context, Intent intent) {
             name = intent.getExtras().getString("username");
-            Toast.makeText(getActivity(),name,Toast.LENGTH_SHORT).show();
-            headImage.setImageResource(R.mipmap.ic_launcher);
-            content.setVisibility(View.GONE);
-            login.setText(name);
+            nameQQ = intent.getExtras().getString("name");
+            QQurl = intent.getExtras().getString("url");
+            if (QQurl!=null&&nameQQ!=null){
+            Glide.with(getActivity()).load(QQurl).into(headImage);
+                login.setText(nameQQ);
+                content.setVisibility(View.GONE);
+            }
+
+
         }
     }
+
 }

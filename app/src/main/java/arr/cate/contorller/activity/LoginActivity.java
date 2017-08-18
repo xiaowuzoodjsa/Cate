@@ -20,6 +20,7 @@ import com.umeng.socialize.bean.SHARE_MEDIA;
 import org.json.JSONObject;
 
 import java.util.Map;
+import java.util.Set;
 
 import arr.cate.R;
 import arr.cate.contorller.base.BaseActivity;
@@ -43,10 +44,14 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     private Button btu_login;
     private TextView weixinLogin;
     private TextView xinlangLogin;
+    private UMShareAPI mShareAPI;
+    private String screen_name;
+    private String profile_image_url;
 
 
     @Override
     protected void initView() {
+        mShareAPI = UMShareAPI.get(this);
         qqLogin = (TextView) findViewById(R.id.QQLogin);
         edPhone = (EditText) findViewById(phone);
         getCode = (Button) findViewById(R.id.btu_get);
@@ -95,11 +100,13 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
     @Override
     public void onClick(View v) {
+
         switch (v.getId()){
             case R.id.QQLogin:
-                mShareAPI = UMShareAPI.get(LoginActivity.this);
+                mShareAPI.getPlatformInfo(LoginActivity.this, SHARE_MEDIA.QQ, umAuthListener);
+               /* mShareAPI = UMShareAPI.get(LoginActivity.this);
                 SHARE_MEDIA platform = SHARE_MEDIA.QQ;
-                mShareAPI.doOauthVerify(LoginActivity.this, platform, umAuthListener);
+                mShareAPI.doOauthVerify(LoginActivity.this, platform, umAuthListener);*/
                 break;
             case R.id.weixinLogin:
                 mShareAPI = UMShareAPI.get(LoginActivity.this);
@@ -149,7 +156,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         }
     }
     private String TAG = "RegistActivity.class";
-    private UMShareAPI mShareAPI;
+
     Handler myHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -219,6 +226,17 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         @Override
         public void onComplete(SHARE_MEDIA platform, int action, Map<String, String> data) {
             Toast.makeText( getApplicationContext(), "Authorize succeed", Toast.LENGTH_SHORT).show();
+            Set<String> strings = data.keySet();
+            for (String str:strings) {
+                screen_name = data.get("screen_name");
+                profile_image_url = data.get("profile_image_url");
+            }
+            Intent intent=new Intent();
+            intent.setAction("aaa");
+            intent.putExtra("name",screen_name);
+            intent.putExtra("url",profile_image_url);
+            sendBroadcast(intent);
+            finish();
         }
 
         @Override
